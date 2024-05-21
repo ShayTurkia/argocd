@@ -16,7 +16,6 @@ spec:
          containers:
             - name: bb-site
               image: nickgofman/weather:V2.2
-              imagePullPolicy: Never
 ---
 apiVersion: v1
 kind: Service
