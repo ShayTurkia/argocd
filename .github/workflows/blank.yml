@@ -17,15 +17,15 @@ jobs:
 
       - name: Update the image name
         run: |
-          yq e '.spec.template.spec.containers[0].image = "new-image-name:tag"' -i ./path/to/deployment.yaml
+          yq e '.spec.template.spec.containers[0].image = "weather-app:color"' -i ./app/weather-app.yaml
 
-      - name: Commit changes
-        run: |
-          git config --global user.name 'Your Name'
-          git config --global user.email 'your-email@example.com'
-          git add ./path/to/deployment.yaml
-          git commit -m "Update image name to new-image-name:tag"
-          git push
+      # - name: Commit changes
+      #   run: |
+      #     git config --global user.name 'Your Name'
+      #     git config --global user.email 'your-email@example.com'
+      #     git add ./path/to/deployment.yaml
+      #     git commit -m "Update image name to new-image-name:tag"
+      #     git push
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
