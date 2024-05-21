@@ -1,34 +1,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: weather-app2
-   namespace: default
+  name: weather-app2
+  namespace: default
 spec:
-   replicas: 5
-   selector:
-      matchLabels:
-         app: weather-app2
-   template:
-      metadata:
-         labels:
-           app: weather-app2
-      spec:
-         containers:
-            - name: bb-site
-              image: nickgofman/weather:V2.2
+  replicas: 5
+  selector:
+    matchLabels:
+      app: weather-app2
+  template:
+    metadata:
+      labels:
+        app: weather-app2
+    spec:
+      containers:
+        - name: bb-site
+          image: weather-app:color
 ---
 apiVersion: v1
 kind: Service
 metadata:
-   name: weather-app-entrypoint
-   namespace: default
+  name: weather-app-entrypoint
+  namespace: default
 spec:
-   type: NodePort
-   selector:
-      app: weather-app2
-   ports:
-      - port: 9090 # Deployment port/service
-      
-        targetPort: 9090 # Pod port in Deployment/service
-         
-        nodePort: 30002 # Node port that will connect to the Deployment
+  type: NodePort
+  selector:
+    app: weather-app2
+  ports:
+    - port: 9090 # Deployment port/service
+      targetPort: 9090 # Pod port in Deployment/service
+      nodePort: 30002 # Node port that will connect to the Deployment
+  template:
+    spec:
+      containers:
+        - image: weather-app:color
