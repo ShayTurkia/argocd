@@ -15,7 +15,7 @@ spec:
       spec:
          containers:
             - name: bb-site
-              image: nickgofman/weather_pipeline:V1.1
+              image: nickgofman/weather:V2.2
               imagePullPolicy: Never
 ---
 apiVersion: v1
