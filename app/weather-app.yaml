@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: bb-site
-          image: weather-app:V2.2
+          image: weather-app:color2
 ---
 apiVersion: v1
 kind: Service
