@@ -30,6 +30,6 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v9
         with:
-          add: weather-app.yaml
+          add: ./app/weather-app.yaml
           message: "increment the patch number after successful build, Build number"
           pathspec_error_handling: exitImmediately #If add fail, the action will stop right away, and the step will fail
