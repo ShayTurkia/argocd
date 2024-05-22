@@ -17,7 +17,7 @@ jobs:
 
       - name: Update the image name
         run: |
-          yq e '.spec.template.spec.containers[0].image = "nickgofman/weather:color2"' -i ./app/weather-app.yaml
+          yq e '.spec.template.spec.containers[0].image = "nickgofman/weather:color"' -i ./app/weather-app.yaml
 
       # - name: Commit changes
       #   run: |
