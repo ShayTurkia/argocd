@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: bb-site
-          image: nickgofman/weather:color2
+          image: nickgofman/weather:color
 ---
 apiVersion: v1
 kind: Service
@@ -33,4 +33,4 @@ spec:
   template:
     spec:
       containers:
-        - image: nickgofman/weather:color2
+        - image: nickgofman/weather:color
