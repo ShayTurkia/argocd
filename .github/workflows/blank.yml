@@ -17,7 +17,7 @@ jobs:
 
       - name: Update the image name
         run: |
-          yq e '.spec.template.spec.containers[0].image = "nickgofman/weather:color"' -i ./app/weather-app.yaml
+          yq e '.spec.template.spec.containers[0].image = "nickgofman/weather:latest"' -i ./app/weather-app.yaml
 
       # - name: Commit changes
       #   run: |
@@ -27,9 +27,9 @@ jobs:
       #     git commit -m "Update image name to new-image-name:tag"
       #     git push
 
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          add: ./app/weather-app.yaml
-          message: "increment the patch number after successful build, Build number"
-          pathspec_error_handling: exitImmediately #If add fail, the action will stop right away, and the step will fail
+      # - name: Commit changes
+      #   uses: EndBug/add-and-commit@v9
+      #   with:
+      #     add: ./app/weather-app.yaml
+      #     message: "increment the patch number after successful build, Build number"
+      #     pathspec_error_handling: exitImmediately #If add fail, the action will stop right away, and the step will fail
